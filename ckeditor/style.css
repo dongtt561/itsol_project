@@ -1,0 +1,67 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 29, 2015, 2:32:37 PM
+    Author     : Thuy
+*/
+.clear {
+    clear:both;
+}
+label.space{
+    margin-top: 50px;
+    float:left;
+    width:150px;
+}
+
+.input{
+    margin-top: 50px;
+    
+    width:500px;
+    height: 50px;
+}
+.ip{
+    margin-top: 50px
+}
+.content{
+    margin-top: 50px;
+    
+    width:500px;
+    height: 50px;
+}
+#ckedit_main{
+    margin:auto;
+    width:1000px;
+    margin-bottom: -15px;
+    margin-top: 10px;
+    border: 1px solid #33cc33;
+    padding: 10px 10px 10px 10px;
+    background-color: #eeeeee;
+}
+h2{
+    text-align: center;
+}
+#insert {
+    margin-top: 30px;
+    margin-left: 30px;
+    width: 70px;
+    height: 40px;
+}
+#update{
+    margin-top: 30px;
+    width: 50px;
+    height: 40px;
+}
+a{
+    margin-left: 5px;
+}
+
+.input_user{
+    margin-top: 100px;
+    
+    width:100px;
+    height: 50px;
+}
+
