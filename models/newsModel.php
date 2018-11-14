@@ -79,7 +79,7 @@ class newsModel extends database{
         }
         return $array;
     }
-    public function inserComment($content,$id_user,$id_post,$content,$time){
+    public function inserComment($content,$id_user,$id_post,$time){
         $query = "INSERT INTO comments (content_comment, id_user, id_post, time_comment) ";
         $query .= "VALUES('$content','$id_user','$id_post','$time')";
         $this->setQuery($query);

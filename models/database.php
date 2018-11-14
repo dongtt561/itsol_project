@@ -8,18 +8,18 @@ class database
 	//function conect to MySQL and databases
 	public function database()
 	{
-		$this->_connection = @mysql_connect('localhost','root','');
+		$this->_connection = mysqli_connect('127.0.0.1', 'root', '', 'news_project', '3309');
 		if(!$this->_connection)
 		{
 			die('Không thể kết nối đến máy chủ');
 		}
 		
-		$db = 'itsol_project';
-		if($db != '' && !mysql_select_db($db,$this->_connection))
-		{
-			die('Không thể mở cơ sở dữ liệu'.mysql_error());
-		}
-		mysql_query('SET NAMES "UTF8"');
+		// $db = 'news_project';
+		// if($db != '' && !mysql_select_db($db,$this->_connection))
+		// {
+		// 	die('Không thể mở cơ sở dữ liệu'.mysql_error());
+		// }
+		// mysql_query('SET NAMES "UTF8"');
 	}
 	
 	
@@ -34,23 +34,23 @@ class database
 		if(!($cur = $this->query()))//Check query
 			return null;
 		$array = array(); //Declare the array to store the records from query
-		while($row = mysql_fetch_assoc($cur)) //browse queries per record in assignment to the array
+		while($row = mysqli_fetch_assoc($cur)) //browse queries per record in assignment to the array
 		{
 			$array[] = $row;
 		}
-		mysql_free_result($cur);
+		mysqli_free_result($cur);
 		return $array;
 	}
 	
 	public function query()
 	{
-		$this->_cursor = mysql_query($this->_sql,$this->_connection);
+		$this->_cursor = mysqli_query($this->_connection, $this->_sql);
 		return $this->_cursor;
 	}
 	
 	public function disconnect()//disconnect database
 	{
-		mysql_close($this->_connection);
+		mysqli_close($this->_connection);
 	}
 }
 ?>

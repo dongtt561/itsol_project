@@ -26,7 +26,7 @@ class adminController{
     public function getAllUser($name){
 
         $admin=new adminModel();
-        $Allusers=$admin->loadAlluser(mysql_real_escape_string($name));
+        $Allusers=$admin->loadAlluser($name);
         return $Allusers;
     }
     public function add_user () {
@@ -148,7 +148,7 @@ class adminController{
     
     public function getAllPosts($name){
         $admin=new adminModel();
-        $allPosts=$admin->loadAllPosts(mysql_real_escape_string($name));
+        $allPosts=$admin->loadAllPosts($name);
         return $allPosts;
     }
     public function deletePost(){
@@ -297,7 +297,7 @@ class adminController{
             $msg.='Chưa chọn video';
         }
         else{
-            $insert=$admin->insert_video($_POST['title'],mysql_real_escape_string($_POST['link_video']),$_POST['description'],date('Y-m-d H:i:s'));
+            $insert=$admin->insert_video($_POST['title'],mysqli_real_escape_string($_POST['link_video']),$_POST['description'],date('Y-m-d H:i:s'));
             $msg='Thêm video thành công';
             header('location: '.HOME_PATH.'/index.php?controller=admin&action=insert_video');
         }
@@ -312,7 +312,7 @@ class adminController{
     
     public function getAllVideos($name){
         $admin=new adminModel();
-        $allVideos=$admin->loadAllVideos(mysql_real_escape_string($name));
+        $allVideos=$admin->loadAllVideos($name);
         return $allVideos;
     }
     public function deleteVideos(){
@@ -358,7 +358,7 @@ class adminController{
     
     public function getAllCate($name){
         $admin=new adminModel();
-        $allCate=$admin->loadAllCate(mysql_real_escape_string($name));
+        $allCate=$admin->loadAllCate($name);
         return $allCate;
     }
     public function  deleteCate(){

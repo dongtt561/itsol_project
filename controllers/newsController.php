@@ -69,7 +69,7 @@ class newsController{
 		else{
 			$_SESSION['views_post']='/index.php?controller=news&action=views_news&id_post='.$id_post;
 			$id_user=$_SESSION['login']['id'];
-			$comment=$cmt->inserComment($content,$id_user,$id_post,$content,date('Y-m-d H:i:s'));
+			$comment=$cmt->inserComment($content,$id_user,$id_post,date('Y-m-d H:i:s'));
 			header('location: '.HOME_PATH.$_SESSION['views_post']);
 		}
 		if ($msg) {

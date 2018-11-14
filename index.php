@@ -5,7 +5,7 @@ if(!defined('ROOT_PATH')){
 	define('ROOT_PATH', __DIR__);
 }
 if(!defined('HOME_PATH')){
-	define('HOME_PATH', 'http://localhost/itsol_project');
+	define('HOME_PATH', 'http://news-dev.com');
 }
 
 
